@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VibeShare - Video Sharing Platform</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="header">
+      <div class="logo">
+        <i class="fas fa-play-circle"></i>
+        <h1>VibeShare</h1>
+      </div>
+      <div class="auth-buttons" id="auth-buttons">
+        <button class="btn btn-login" id="login-btn">Login</button>
+        <button class="btn btn-signup" id="signup-btn">Sign Up</button>
+      </div>
+      <div class="user-profile hidden" id="user-profile">
+        <span id="username"></span>
+        <button class="btn btn-upload" id="upload-btn">Upload</button>
+        <button class="btn btn-logout" id="logout-btn">Logout</button>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="videos-container" id="videos-container">
+        <div class="loading-spinner" id="loading-spinner">
+          <i class="fas fa-spinner fa-spin"></i>
+        </div>
+        <!-- Videos will be inserted here dynamically -->
+      </section>
+
+      <!-- Login Form Modal -->
+      <div class="modal" id="login-modal">
+        <div class="modal-content">
+          <span class="close-btn" id="close-login">&times;</span>
+          <h2>Login</h2>
+          <form id="login-form">
+            <div class="form-group">
+              <label for="login-email">Email</label>
+              <input type="email" id="login-email" required>
+            </div>
+            <div class="form-group">
+              <label for="login-password">Password</label>
+              <input type="password" id="login-password" required>
+            </div>
+            <button type="submit" class="btn btn-submit">Login</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Register Form Modal -->
+      <div class="modal" id="signup-modal">
+        <div class="modal-content">
+          <span class="close-btn" id="close-signup">&times;</span>
+          <h2>Sign Up</h2>
+          <form id="signup-form">
+            <div class="form-group">
+              <label for="signup-username">Username</label>
+              <input type="text" id="signup-username" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-email">Email</label>
+              <input type="email" id="signup-email" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-password">Password</label>
+              <input type="password" id="signup-password" required>
+            </div>
+            <button type="submit" class="btn btn-submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Upload Video Modal -->
+      <div class="modal" id="upload-modal">
+        <div class="modal-content">
+          <span class="close-btn" id="close-upload">&times;</span>
+          <h2>Upload Video</h2>
+          <form id="upload-form">
+            <div class="form-group">
+              <label for="video-title">Title</label>
+              <input type="text" id="video-title" required>
+            </div>
+            <div class="form-group">
+              <label for="video-file">Video File</label>
+              <input type="file" id="video-file" accept="video/*" required>
+            </div>
+            <div class="upload-progress hidden" id="upload-progress">
+              <div class="progress-bar">
+                <div class="progress" id="progress-bar"></div>
+              </div>
+              <span id="progress-text">0%</span>
+            </div>
+            <button type="submit" class="btn btn-submit">Upload</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2025 VibeShare. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/videos.js"></script>
+  <script src="js/upload.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
